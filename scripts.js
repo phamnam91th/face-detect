@@ -3,7 +3,7 @@ const fileInput = document.querySelector('#file-input');
 
 
 async function loadTrainingData() {
-	const labels = ['Fukada Eimi', 'Rina Ishihara', 'Takizawa Laura', 'Yua Mikami','Bao Thy','Tuan Hung','Minh Vuong','Anh Quan Ido','Lionel Messi','Suarez','Pique','Sergio Busquets','Stegen','Jordi Alba','amy', 'bernadette', 'howard', 'leonard', 'penny', 'raj', 'sheldon', 'stuart']
+	const labels = ['Fukada Eimi', 'Rina Ishihara', 'Takizawa Laura', 'Yua Mikami','Bao Thy','Tuan Hung','Minh Vuong','Anh Quan Ido','Lionel Messi','Suarez','Pique','Sergio Busquets','Stegen','Jordi Alba']
 	// const labels = ['amy']
 
 
@@ -11,7 +11,7 @@ async function loadTrainingData() {
 	for (const label of labels) {
 		const descriptors = []
 		for (let i = 1; i <= 4; i++) {
-			const image = await faceapi.fetchImage(`/data/${label}/${i}.jpeg`)
+			const image = await faceapi.fetchImage(`/data/${label}/${i}.jpg`)
 			const detection = await faceapi.detectSingleFace(image).withFaceLandmarks().withFaceDescriptor()
 			descriptors.push(detection.descriptor)
 		}
