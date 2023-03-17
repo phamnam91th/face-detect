@@ -20,7 +20,12 @@ async function loadTrainingData() {
 			text: `Training xong data của ${label}!`
 		}).showToast();
 	}
-
+	var obj = faceDescriptors[0];
+	console.log(obj);
+	// var json = JSON.stringify(obj);
+	// var fs = require('fs');
+	// fs.writeFile('myjsonfile.json', json, 'utf8', callback);
+	// const myJSON = JSON.stringify(faceDescriptors);
 	return faceDescriptors
 }
 
